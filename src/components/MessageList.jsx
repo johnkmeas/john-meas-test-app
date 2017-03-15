@@ -13,10 +13,13 @@ class MessageList extends React.Component {
     fetch('https://john-meas-test.herokuapp.com/messages/?format=json')
     .then( response => response.json() )
     .then( ({results: items}) => this.setState({items}))
+
+    fetch('https://john-meas-test.herokuapp.com/messages/?format=json&page=2')
+    .then( response => response.json() )
+    .then( ({results: items}) => this.setState({items: this.state.items.concat(items)}))
   }
   render() {
     let items = this.state.items;
-
     return (
       <Router>
         <div>
