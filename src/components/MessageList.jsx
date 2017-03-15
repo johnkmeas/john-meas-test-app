@@ -1,7 +1,7 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import Message from './Message.jsx';
-
+import { BrowserRouter as Router} from 'react-router-dom';
 class MessageList extends React.Component {
   constructor() {
     super();
@@ -16,11 +16,13 @@ class MessageList extends React.Component {
     let items = this.state.items;
 
     return (
-      <div>
-        { items.map((item, i) =>
+      <Router>
+        <div>
+          { items.map((item, i) =>
 
-          <Message key={i} results={item}/>) }
-      </div>
+            <Message key={i} results={item}/>) }
+        </div>
+      </Router>
     )
   }
 }
