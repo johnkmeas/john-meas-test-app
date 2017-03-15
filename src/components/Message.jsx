@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import SingleMessage from './SingleMessage.jsx'
 import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
+
 class Message extends Component {
   render() {
-
     console.log("Rendering <Message/>");
     return (
       <div>
@@ -24,10 +25,5 @@ class Message extends Component {
 }
 
 
-const SingleMessage = ({ match}) => (
-  <div>
-    {match.params.msgid}
-  </div>
-)
 export default Message;
 
