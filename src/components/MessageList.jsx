@@ -1,6 +1,7 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import Message from './Message.jsx';
+import PostMessage from './PostMessage.jsx';
 import { BrowserRouter as Router} from 'react-router-dom';
 
 class MessageList extends React.Component {
@@ -19,6 +20,7 @@ class MessageList extends React.Component {
     return (
       <Router>
         <div>
+        <PostMessage />
           { items.map((item, i) =>
 
             <Message key={i} results={item}/>) }
