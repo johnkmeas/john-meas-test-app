@@ -6,7 +6,6 @@ class SingleMessage extends React.Component {
     this.state = {}
   }
   componentWillMount() {
-
     fetch(`https://john-meas-test.herokuapp.com/messages/${this.props.match.params.msgid}`)
     .then( (response) => {
       let myData = response.json()
@@ -20,9 +19,7 @@ class SingleMessage extends React.Component {
 
     return (
         <div>
-          { items.forEach((item, i) =>
-
-            <Message key={i} results={item}/>) }
+          <p>need to implement single message display </p>
         </div>
 
     )
