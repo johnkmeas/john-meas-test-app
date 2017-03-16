@@ -32,7 +32,7 @@ class Message extends Component {
           <div>
             <h4> {this.props.results.text}</h4>
             <p>created on: {this.props.results.created_at}</p>
-            <Link to={`/g/${this.props.results.id}`}>
+            <Link to={`/messages/${this.props.results.id}`}>
               <h5> see more</h5>
             </Link>
             <form onSubmit={this.handleDelete}>
@@ -41,8 +41,7 @@ class Message extends Component {
             <hr></hr>
           </div>
         )} />
-
-        <Route path="/g/:msgid" component={SingleMessage}/>
+        <Route path="/messages/:id" component={SingleMessage}/>
       </div>
     );
   }
