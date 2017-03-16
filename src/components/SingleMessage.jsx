@@ -6,7 +6,7 @@ class SingleMessage extends React.Component {
     this.state = {}
   }
   componentWillMount() {
-    fetch(`https://john-meas-test.herokuapp.com/messages/${this.props.match.params.msgid}`)
+    fetch(`https://john-meas-test.herokuapp.com/messages/${this.props.match.params.id}`)
     .then( (response) => {
       let myData = response.json()
       this.setState({myData})
