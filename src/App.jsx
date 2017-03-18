@@ -8,14 +8,13 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-        <div>
-          <Route exact={true} path="/" render={() => (
-            <MessageList />
-
+          <div>
+            <Route exact={true} path="/" render={() => (
+              <MessageList />
             )} />
             <Route path="/messages/:id" component={SingleMessage}/>
-            </div>
-          </Router>
+          </div>
+        </Router>
       </div>
     );
   }
