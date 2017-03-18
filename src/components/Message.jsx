@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Moment from 'react-moment';
 import SingleMessage from './SingleMessage.jsx'
 import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
 
@@ -11,16 +12,16 @@ class Message extends Component {
 
   handleDelete(event) {
 
-    event.preventDefault();
-    fetch(`https://john-meas-test.herokuapp.com/messages/${this.props.results.id}`, {
+    fetch(`https://john-meas-test.herokuapp.com/messages/${this.props.results.id}/`, {
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Methods': 'DELETE'
+        'Content-Type': 'application/json'
       },
       method: 'DELETE',
       mode: 'cors'
     })
+    console.log('event',event )
+    event.preventDefault();
 
   }
 
@@ -28,20 +29,13 @@ class Message extends Component {
     console.log("Rendering <Message/>");
     return (
       <div>
-        <Route exact={true} path="/" render={() => (
-          <div>
-            <h4> {this.props.results.text}</h4>
-            <p>created on: {this.props.results.created_at}</p>
-            <Link to={`/messages/${this.props.results.id}`}>
-              <h5> see more</h5>
-            </Link>
-            <form onSubmit={this.handleDelete}>
-              <input type="submit" value="delete" />
-            </form>
-            <hr></hr>
-          </div>
-        )} />
-        <Route path="/messages/:id" component={SingleMessage}/>
+        <h4> {this.props.results.text}</h4>
+        <p>created on: <Moment>{this.props.results.created_at}</Moment></p>
+        <Link to={`/messages/${this.props.results.id}`}>
+          <h5> see more</h5>
+        </Link>
+        <button onClick={this.handleDelete}>Delete</button>
+        <hr></hr>
       </div>
     );
   }
