@@ -1,0 +1,38 @@
+body {
+  background-color: lightgrey;
+}
+
+.App {
+  width: 760px;
+  margin: 0 auto;
+}
+
+.message, .message-single  {
+  background-color: cornflowerblue;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 10px 59px -12px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 10px 59px -12px rgba(0,0,0,0.75);
+box-shadow: 0px 10px 59px -12px rgba(0,0,0,0.75);
+}
+.example-enter {
+  opacity: 0.01;
+  transform: translateY(-40px);
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: 300ms ease-in;
+  transform: translateY(0px);
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition:  300ms ease-in;
+  transform: translateY(-40px);
+}
