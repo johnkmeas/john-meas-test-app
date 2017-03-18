@@ -21,14 +21,13 @@ class MessageList extends React.Component {
   render() {
     let items = this.state.items;
     return (
-      <Router>
+
         <div>
-          <Route exact={true} path="/" render={() => (
-            <PostMessage />
-          )} />
-          { items.map((item, i) => <Message key={i} results={item}/>) }
+        <div>
+          <PostMessage />
+          { items.map((item, i) => <Message key={i} results={item}/>) }</div>
         </div>
-      </Router>
+
     )
   }
 }
